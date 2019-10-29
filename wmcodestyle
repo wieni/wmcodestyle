@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+set_error_handler(function ($severity, $message, $file, $line) {
+    if ($severity & error_reporting()) {
+        throw new ErrorException($message, 0, $severity, $file, $line);
+    }
+});
+
+if (file_exists($a = __DIR__.'/../../autoload.php')) {
+    require_once $a;
+} else {
+    require_once __DIR__.'/vendor/autoload.php';
+}
+
+unset($a);
+
+use Composer\XdebugHandler\XdebugHandler;
+use Drupal\wmcodestyle\Console\Application;
+
+// Restart if xdebug is loaded, unless the environment variable WMCODESTYLE_ALLOW_XDEBUG is set.
+$xdebug = new XdebugHandler('WMCODESTYLE', '--ansi');
+$xdebug->check();
+unset($xdebug);
+
+$application = new Application();
+$application->run();
+
+__HALT_COMPILER();

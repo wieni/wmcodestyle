@@ -1,0 +1,36 @@
+{
+    "name": "wieni/wmcodestyle",
+    "type": "application",
+    "description": "A set of Wieni code style standards and tools to enforce them.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wieni",
+            "email": "info@wieni.be"
+        }
+    ],
+    "require": {
+        "drush/drush": "^9.7",
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "symfony/console": "^2.8|^3|^4",
+        "symfony/filesystem": "^3.0|^4.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\wmcodestyle\\": "src/"
+        }
+    },
+    "bin": [
+        "wmcodestyle"
+    ]
+}
