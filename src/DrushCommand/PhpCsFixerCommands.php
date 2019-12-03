@@ -50,7 +50,7 @@ class PhpCsFixerCommands extends DrushCommands
         $application = new \PhpCsFixer\Console\Application();
         $application->setAutoExit(false);
 
-        return $this->runCommand($application, FixCommand::COMMAND_NAME, $arguments, $options, $extra);
+        return $this->runCommand($application, FixCommand::getDefaultName(), $arguments, $options, $extra);
     }
 
     /** @hook option phpcs:fix */
