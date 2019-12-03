@@ -1,4 +1,0 @@
-services:
-    wmcodestyle.commands.php-cs-fixer:
-        class: Drupal\wmcodestyle\Commands\PhpCsFixerCommands
-        tags: [{ name: drush.command }]

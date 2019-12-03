@@ -10,20 +10,12 @@
         }
     ],
     "require": {
-        "drush/drush": "^9.7|^10.0",
         "friendsofphp/php-cs-fixer": "^2.15",
         "symfony/console": "^2.8|^3|^4",
         "symfony/filesystem": "^3.0|^4.0"
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "drush": {
-            "services": {
-                "drush.services.yml": "^9 || ^10"
-            }
-        }
     },
     "autoload": {
         "psr-4": {
