@@ -2,7 +2,7 @@
 
 namespace Drupal\wmcodestyle\Console;
 
-use Drupal\wmcodestyle\Console\Command\LinkCommand;
+use Drupal\wmcodestyle\Console\Command\SyncCommand;
 use Symfony\Component\Console\Application as BaseApplication;
 
 class Application extends BaseApplication
@@ -13,6 +13,6 @@ class Application extends BaseApplication
     {
         parent::__construct('wmcodestyle', self::VERSION);
 
-        $this->add(new LinkCommand());
+        $this->add(new SyncCommand());
     }
 }

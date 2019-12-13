@@ -9,28 +9,35 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 
-class LinkCommand extends Command
+class SyncCommand extends Command
 {
-    public const COMMAND_NAME = 'link';
+    public const COMMAND_NAME = 'sync';
+
+    /** @var Filesystem */
+    protected $filesystem;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->filesystem = new Filesystem();
+    }
 
     protected function configure()
     {
         $this
             ->setName(self::COMMAND_NAME)
-            ->setDescription('Link the php-cs-fixer config file to the project root.');
+            ->setDescription('Sync the php-cs-fixer config file to the project root.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
 
-        $fileName = '.php_cs.php';
         $packageRoot = __DIR__ . '/../../..';
         $projectRoot = $this->getComposerRoot();
-        $relativePackageRoot = substr(realpath($packageRoot), strlen(realpath($projectRoot)));
 
-        $source = '.' . implode('/', [$relativePackageRoot, $fileName]);
-        $destination = implode('/', [$projectRoot, $fileName]);
+        $source = $packageRoot . '/.php_cs.php';
+        $destination = $projectRoot . '/.php_cs.dist';
 
         if (file_exists($destination)) {
             if ($io->confirm("An existing config is found at {$destination}. Overwrite?")) {
@@ -41,14 +48,13 @@ class LinkCommand extends Command
         }
 
         try {
-            echo $this->getRelativePath($source, $destination);
-            exec("ln -s {$source} ./{$fileName}}");
+            $this->filesystem->copy($source, $destination, true);
         } catch (IOException $e) {
             $io->error($e->getMessage());
             return;
         }
 
-        $io->success('Successfully linked the php-cs-fixer config to ' . $destination);
+        $io->success('Successfully copied the php-cs-fixer config to ' . $destination);
     }
 
     protected function getComposerRoot(): ?string
@@ -68,18 +74,5 @@ class LinkCommand extends Command
         } while ($dir !== '/');
 
         return $composerRoot;
-    }
-
-    protected function getRelativePath(string $from, string $to): string
-    {
-        $dir = explode(DIRECTORY_SEPARATOR, is_file($from) ? dirname($from) : rtrim($from, DIRECTORY_SEPARATOR));
-        $file = explode(DIRECTORY_SEPARATOR, $to);
-
-        while ($dir && $file && ($dir[0] == $file[0])) {
-            array_shift($dir);
-            array_shift($file);
-        }
-
-        return str_repeat('..' . DIRECTORY_SEPARATOR, count($dir)) . implode(DIRECTORY_SEPARATOR, $file);
     }
 }
