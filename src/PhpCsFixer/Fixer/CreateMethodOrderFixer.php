@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wmcodestyle\Fixer;
+namespace Wieni\wmcodestyle\PhpCsFixer\Fixer;
 
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\FixerDefinition;

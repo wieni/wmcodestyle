@@ -19,8 +19,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\wmcodestyle\\": "src/"
+            "Wieni\\wmcodestyle\\": "src/"
         }
+    },
+    "scripts": {
+        "coding-standards": [
+            "php-cs-fixer fix --config=.php_cs.php"
+        ]
     },
     "bin": [
         "wmcodestyle"
