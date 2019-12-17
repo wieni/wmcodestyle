@@ -46,12 +46,6 @@ composer.json so it is automatically executed at the appropriate time.
  }
 ```
 
-Run
-
-```
-$ composer coding-standards
-```
-
 ### Configuration for php-cs-fixer
 
 This package provides a configuration factory and multiple rule sets for
