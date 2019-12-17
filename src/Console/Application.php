@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wmcodestyle\Console;
+namespace Wieni\wmcodestyle\Console;
 
 use Drupal\wmcodestyle\Console\Command\SyncCommand;
 use Symfony\Component\Console\Application as BaseApplication;

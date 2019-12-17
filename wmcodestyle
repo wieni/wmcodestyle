@@ -16,7 +16,7 @@ if (file_exists($a = __DIR__.'/../../autoload.php')) {
 unset($a);
 
 use Composer\XdebugHandler\XdebugHandler;
-use Drupal\wmcodestyle\Console\Application;
+use Wieni\wmcodestyle\Console\Application;
 
 // Restart if xdebug is loaded, unless the environment variable WMCODESTYLE_ALLOW_XDEBUG is set.
 $xdebug = new XdebugHandler('WMCODESTYLE', '--ansi');

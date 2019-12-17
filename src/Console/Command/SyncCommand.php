@@ -1,8 +1,9 @@
 <?php
 
-namespace Drupal\wmcodestyle\Console\Command;
+namespace Wieni\wmcodestyle\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -26,7 +27,8 @@ class SyncCommand extends Command
     {
         $this
             ->setName(self::COMMAND_NAME)
-            ->setDescription('Sync the php-cs-fixer config file to the project root.');
+            ->setDescription('Sync files to the root of the project requiring this package.')
+            ->addArgument('file_name', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'The file(s) to copy');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -36,11 +38,12 @@ class SyncCommand extends Command
         $packageRoot = __DIR__ . '/../../..';
         $projectRoot = $this->getComposerRoot();
 
-        $source = $packageRoot . '/.php_cs.php';
-        $destination = $projectRoot . '/.php_cs.dist';
+        $fileName = $input->getArgument('file_name');
+        $source = implode(DIRECTORY_SEPARATOR, [$packageRoot, $fileName]);
+        $destination = implode(DIRECTORY_SEPARATOR, [$projectRoot, $fileName]);
 
         if (file_exists($destination)) {
-            if ($io->confirm("An existing config is found at {$destination}. Overwrite?")) {
+            if ($io->confirm("The file {$fileName} already exists at {$projectRoot}. Overwrite?")) {
                 unlink($destination);
             } else {
                 return;
@@ -54,7 +57,7 @@ class SyncCommand extends Command
             return;
         }
 
-        $io->success('Successfully copied the php-cs-fixer config to ' . $destination);
+        $io->success("Successfully copied {$fileName} to {$projectRoot}.");
     }
 
     protected function getComposerRoot(): ?string
