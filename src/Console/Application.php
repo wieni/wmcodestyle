@@ -2,8 +2,8 @@
 
 namespace Wieni\wmcodestyle\Console;
 
-use Wieni\wmcodestyle\Console\Command\SyncCommand;
 use Symfony\Component\Console\Application as BaseApplication;
+use Wieni\wmcodestyle\Console\Command\SyncCommand;
 
 class Application extends BaseApplication
 {
