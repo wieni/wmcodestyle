@@ -24,10 +24,14 @@
     },
     "scripts": {
         "coding-standards": [
+            "@composer normalize",
             "php-cs-fixer fix --config=.php_cs.php"
         ]
     },
     "bin": [
         "wmcodestyle"
-    ]
+    ],
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.0"
+    }
 }
