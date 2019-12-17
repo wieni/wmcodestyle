@@ -2,7 +2,7 @@
 
 namespace Wieni\wmcodestyle\Console;
 
-use Drupal\wmcodestyle\Console\Command\SyncCommand;
+use Wieni\wmcodestyle\Console\Command\SyncCommand;
 use Symfony\Component\Console\Application as BaseApplication;
 
 class Application extends BaseApplication

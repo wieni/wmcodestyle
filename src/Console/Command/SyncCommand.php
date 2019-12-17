@@ -37,27 +37,29 @@ class SyncCommand extends Command
 
         $packageRoot = __DIR__ . '/../../..';
         $projectRoot = $this->getComposerRoot();
+        $fileNames = $input->getArgument('file_name') ?? [];
 
-        $fileName = $input->getArgument('file_name');
-        $source = implode(DIRECTORY_SEPARATOR, [$packageRoot, $fileName]);
-        $destination = implode(DIRECTORY_SEPARATOR, [$projectRoot, $fileName]);
+        foreach ($fileNames as $fileName) {
+            $source = implode(DIRECTORY_SEPARATOR, [$packageRoot, $fileName]);
+            $destination = implode(DIRECTORY_SEPARATOR, [$projectRoot, $fileName]);
 
-        if (file_exists($destination)) {
-            if ($io->confirm("The file {$fileName} already exists at {$projectRoot}. Overwrite?")) {
-                unlink($destination);
-            } else {
+            if (file_exists($destination)) {
+                if ($io->confirm("The file {$fileName} already exists at {$projectRoot}. Overwrite?")) {
+                    unlink($destination);
+                } else {
+                    return;
+                }
+            }
+
+            try {
+                $this->filesystem->copy($source, $destination, true);
+            } catch (IOException $e) {
+                $io->error($e->getMessage());
                 return;
             }
-        }
 
-        try {
-            $this->filesystem->copy($source, $destination, true);
-        } catch (IOException $e) {
-            $io->error($e->getMessage());
-            return;
+            $io->success("Successfully copied {$fileName} to {$projectRoot}.");
         }
-
-        $io->success("Successfully copied {$fileName} to {$projectRoot}.");
     }
 
     protected function getComposerRoot(): ?string
