@@ -21,7 +21,7 @@ final class Php73 extends RuleSetBase
         ],
         'explicit_indirect_variable' => true,
         'fully_qualified_strict_types' => true,
-        'global_namespace_import' => true,
+        'global_namespace_import' => false,
         'hash_to_slash_comment' => false,
         'increment_style' => ['style' => 'post'],
         'indentation_type' => true,
@@ -71,6 +71,7 @@ final class Php73 extends RuleSetBase
         'phpdoc_to_comment' => false,
         'phpdoc_trim' => false,
         'single_blank_line_before_namespace' => false,
+        'single_line_throw' => false,
         'yoda_style' => false,
         'Wieni/create_method_order' => true,
     ];
