@@ -166,21 +166,13 @@ Run
 $ composer coding-standards
 ```
 
-## Maintainers
-* [**Dieter Holvoet**](https://github.com/DieterHolvoet) - *Initial
-  work*
-
-See also the list of
-[contributors](https://github.com/wieni/wmmailable/contributors) who
-participated in this project.
-
 ## Changelog
 All notable changes to this project will be documented in the
 [CHANGELOG](CHANGELOG.md) file.
 
 ## Security
 If you discover any security-related issues, please email
-[info@wieni.be](mailto:info@wieni.be) instead of using the issue
+[security@wieni.be](mailto:security@wieni.be) instead of using the issue
 tracker.
 
 ## License
