@@ -1,0 +1,6 @@
+parameters:
+    paths:
+        - src
+
+includes:
+	- phpstan/php-project.neon

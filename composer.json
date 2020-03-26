@@ -24,6 +24,13 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "phpstan/custom-rules.neon"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
             "Wieni\\wmcodestyle\\": "src/"
@@ -35,14 +42,8 @@
     "scripts": {
         "coding-standards": [
             "@composer normalize",
-            "php-cs-fixer fix --config=.php_cs.php"
+            "php-cs-fixer fix --config=.php_cs.php",
+            "phpstan analyse"
         ]
-    },
-    "extra": {
-        "phpstan": {
-            "includes": [
-                "phpstan/custom-rules.neon"
-            ]
-        }
     }
 }
