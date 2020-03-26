@@ -3,6 +3,9 @@
 namespace Wieni\wmcodestyle\PHPStan\Reflection;
 
 use PHPStan\Analyser\OutOfClassScope;
+use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\MethodReflection;
+use PHPStan\Reflection\MethodsClassReflectionExtension;
 use PHPStan\Type\FileTypeMapper;
 
 class MethodsFromPresentersExtension implements MethodsClassReflectionExtension
@@ -32,7 +35,7 @@ class MethodsFromPresentersExtension implements MethodsClassReflectionExtension
 
     protected function getPresenterModel(ClassReflection $classReflection): ?ClassReflection
     {
-        if (!$classReflection->getAncestorWithClassName('')) {
+        if (!$classReflection->getAncestorWithClassName('Drupal\wmcontroller\Entity\PresenterInterface')) {
             return null;
         }
 
