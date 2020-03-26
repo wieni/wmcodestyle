@@ -22,4 +22,3 @@ parameters:
 includes:
 	- %currentWorkingDirectory%/vendor/mglaman/phpstan-drupal/extension.neon
 	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
-

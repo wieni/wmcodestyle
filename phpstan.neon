@@ -3,4 +3,5 @@ parameters:
         - src
 
 includes:
+	- phpstan/custom-rules.neon
 	- phpstan/php-project.neon
