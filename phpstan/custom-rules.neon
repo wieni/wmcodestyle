@@ -1,0 +1,5 @@
+services:
+	-
+		class: Wieni\wmcodestyle\PHPStan\Reflection\MethodsFromPresentersExtension
+		tags:
+			- phpstan.broker.methodsClassReflectionExtension

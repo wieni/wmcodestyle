@@ -11,6 +11,10 @@
     ],
     "require": {
         "friendsofphp/php-cs-fixer": "^2.15",
+        "mglaman/phpstan-drupal": "^0.12",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-deprecation-rules": "^0.12",
+        "phpstan/phpstan-strict-rules": "^0.12",
         "symfony/console": "^2.8 || ^3 || ^4",
         "symfony/filesystem": "^3.0 || ^4.0"
     },
@@ -33,5 +37,12 @@
             "@composer normalize",
             "php-cs-fixer fix --config=.php_cs.php"
         ]
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "phpstan/custom-rules.neon"
+            ]
+        }
     }
 }
