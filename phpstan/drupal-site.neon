@@ -1,0 +1,25 @@
+parameters:
+    excludes_analyse:
+        - *Test.php
+        - *TestBase.php
+    ignoreErrors:
+        - '#Constant (WM_ENV(_.+)?|WM_FRONT) not found#'
+        - '#Plugin definitions cannot be altered#'
+        - '#Plugin manager has cache backend specified but does not declare cache tags#'
+        -
+            message: '#Implicit array creation is not allowed - variable \$(config|settings) does not exist#'
+            paths:
+                - %currentWorkingDirectory%/public/sites/default/settings.php
+        -
+            message: '#Undefined variable: \$(app_root|site_path)#'
+            paths:
+                - %currentWorkingDirectory%/public/sites/default/settings.php
+        -
+            message: '#Implicit array creation is not allowed - variable \$events does not exist#'
+            paths:
+                - %currentWorkingDirectory%/public/modules/custom/*/src/EventSubscriber/*
+
+includes:
+	- %currentWorkingDirectory%/vendor/mglaman/phpstan-drupal/extension.neon
+	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
+

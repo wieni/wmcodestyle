@@ -1,0 +1,12 @@
+parameters:
+    ignoreErrors:
+        - '#Construct empty\(\) is not allowed#'
+        - '#Only booleans are allowed#'
+        - '#Short ternary operator is not allowed#'
+        - '#Unsafe usage of new static\(\)#'
+    level: 1
+    reportUnmatchedIgnoredErrors: false
+
+includes:
+	- %currentWorkingDirectory%/vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
