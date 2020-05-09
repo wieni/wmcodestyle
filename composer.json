@@ -1,7 +1,7 @@
 {
     "name": "wieni/wmcodestyle",
     "type": "application",
-    "description": "A set of Wieni code style standards and tools to enforce them.",
+    "description": "A set of Wieni best practices, coding standards and tools to enforce them.",
     "license": "MIT",
     "authors": [
         {
