@@ -7,7 +7,7 @@ parameters:
         - '#Plugin definitions cannot be altered#'
         - '#Plugin manager has cache backend specified but does not declare cache tags#'
         -
-            message: '#Implicit array creation is not allowed - variable \$(config|settings) does not exist#'
+            message: '#Implicit array creation is not allowed - variable \$(config|settings) (does|might) not exist#'
             paths:
                 - %currentWorkingDirectory%/public/sites/default/settings.php
         -

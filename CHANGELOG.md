@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Change repository description
 - Update README
+- Update regex of the _Implicit array creation is not allowed_ 
+ PHPStan rule.
 
 ## [1.1.0] - 2020-03-26
 ### Added
