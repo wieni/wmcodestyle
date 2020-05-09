@@ -5,15 +5,32 @@ wmcodestyle
 [![Total Downloads](https://poser.pugx.org/wieni/wmcodestyle/downloads)](https://packagist.org/packages/wieni/wmcodestyle)
 [![License](https://poser.pugx.org/wieni/wmcodestyle/license)](https://packagist.org/packages/wieni/wmcodestyle)
 
-> A set of Wieni code style standards and tools to enforce them.
+> A set of Wieni best practices, coding standards and tools to enforce them.
 
 ## Why?
-- A central location to keep track of our written code style rules
+- A central location to keep track of our written coding standards and 
+ best practices
 - Make configuration for tools to enforce our codestyle available in all
   of our repositories, without having to duplicate and sync them
-  manually
+  manually  
+ 
+## Table of Contents
+1. [Coding standards](#coding-standards-and-best-practices)
+2. [Tooling](#tooling)
+    * [Installation](#installation)
+    * [Sync config files with your project](#sync-config-files-with-your-project)
+    * [Configuration for php-cs-fixer](#configuration-for-php-cs-fixer)
+3. [Changelog](#changelog)
+4. [Security](#security)
+5. [License](#license)
+6. [Acknowledgments](#acknowledgments)
 
-## Installation
+## Coding standards
+- [Publishing modules](standards/PUBLISHING_MODULES.md)
+- [Git](standards/GIT.md)
+
+## Tooling
+### Installation
 
 This package requires PHP 7.1 or higher and can be installed using
 Composer:
@@ -21,8 +38,6 @@ Composer:
 ```bash
  composer require --dev wieni/wmcodestyle
 ```
-
-## How does it work?
 
 ### Sync config files with your project
 This package provides a command to sync any file from this repository to
