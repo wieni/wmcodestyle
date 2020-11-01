@@ -11,14 +11,17 @@ parameters:
             paths:
                 - %currentWorkingDirectory%/public/sites/default/settings.php
         -
-            message: '#Undefined variable: \$(app_root|site_path)#'
-            paths:
-                - %currentWorkingDirectory%/public/sites/default/settings.php
-        -
             message: '#Implicit array creation is not allowed - variable \$events does not exist#'
             paths:
                 - %currentWorkingDirectory%/public/modules/custom/*/src/EventSubscriber/*
-
+        -
+            message: '#Implicit array creation is not allowed - variable \$fields does not exist#'
+            paths:
+                - %currentWorkingDirectory%/public/modules/custom/*/src/Entity/*
+        -
+            message: '#Undefined variable: \$(app_root|site_path)#'
+            paths:
+                - %currentWorkingDirectory%/public/sites/default/settings.php
 includes:
 	- %currentWorkingDirectory%/vendor/mglaman/phpstan-drupal/extension.neon
 	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
