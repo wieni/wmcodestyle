@@ -1,0 +1,27 @@
+parameters:
+    bootstrapFiles:
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/bootstrap.inc
+    fileExtensions:
+        - inc
+        - install
+        - module
+    paths:
+        - %currentWorkingDirectory%/src
+    excludes_analyse:
+        - *Test.php
+        - *TestBase.php
+    ignoreErrors:
+        -
+            message: '#Drush\\Commands\\DrushCommands not found#'
+            path: %currentWorkingDirectory%/src/Commands/*
+        -
+            message: '#Implicit array creation is not allowed - variable \$events does not exist#'
+            paths:
+                - %currentWorkingDirectory%/src/EventSubscriber/*
+        -
+            message: '#Implicit array creation is not allowed - variable \$fields does not exist#'
+            paths:
+                - %currentWorkingDirectory%/src/Entity/*
+
+includes:
+	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
