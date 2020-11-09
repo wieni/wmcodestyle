@@ -1,6 +1,14 @@
 parameters:
+    scanDirectories:
+        - %currentWorkingDirectory%/vendor/drupal/core/modules
     bootstrapFiles:
         - %currentWorkingDirectory%/vendor/drupal/core/includes/bootstrap.inc
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/common.inc
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/file.inc
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/install.core.inc
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/install.inc
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/schema.inc
+        - %currentWorkingDirectory%/vendor/drupal/core/includes/theme.inc
     fileExtensions:
         - inc
         - install
@@ -24,4 +32,4 @@ parameters:
                 - %currentWorkingDirectory%/src/Entity/*
 
 includes:
-	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
+	- php-project.neon
