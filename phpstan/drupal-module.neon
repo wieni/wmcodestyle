@@ -1,6 +1,7 @@
 parameters:
     scanDirectories:
-        - %currentWorkingDirectory%/vendor/drupal/core/modules
+        - %currentWorkingDirectory%/vendor/drupal
+        - %currentWorkingDirectory%/vendor/wieni
     bootstrapFiles:
         - %currentWorkingDirectory%/vendor/drupal/core/includes/bootstrap.inc
         - %currentWorkingDirectory%/vendor/drupal/core/includes/common.inc
