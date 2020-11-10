@@ -30,6 +30,10 @@ parameters:
             message: '#Implicit array creation is not allowed - variable \$fields does not exist#'
             paths:
                 - %currentWorkingDirectory%/src/Entity/*
+        # Added in Symfony 4.3, so can't do anything about these
+        # as long as the module supports core versions < 9.0.0
+        - '#deprecated class Symfony\\Component\\EventDispatcher\\Event#'
+        - '#deprecated class Symfony\\Component\\HttpKernel\\Event\\(FilterControllerArguments|FilterController|FilterResponse|GetResponse|GetResponseForControllerResult|GetResponseForException|PostResponse)Event#'
 
 includes:
 	- php-project.neon
