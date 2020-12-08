@@ -11,6 +11,8 @@ abstract class RuleSetBase implements RuleSetInterface
     protected $name;
     /** @var array */
     protected $rules = [];
+    /** @var array */
+    protected $riskyRules = [];
     /** @var int */
     protected $targetPhpVersion;
 
@@ -36,6 +38,11 @@ abstract class RuleSetBase implements RuleSetInterface
     final public function getRules(): array
     {
         return $this->rules;
+    }
+
+    final public function getRiskyRules(): array
+    {
+        return $this->riskyRules;
     }
 
     final public function getTargetPhpVersion(): int

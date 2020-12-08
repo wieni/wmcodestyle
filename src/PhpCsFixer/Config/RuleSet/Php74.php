@@ -2,13 +2,13 @@
 
 namespace Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet;
 
-final class Php73 extends RuleSetBase
+final class Php74 extends RuleSetBase
 {
-    protected $name = 'Wieni (PHP 7.3)';
+    protected $name = 'Wieni (PHP 7.4)';
 
     protected $rules = [
         '@Symfony' => true,
-        '@PHP73Migration' => true,
+        '@PHP74Migration' => true,
         '@DoctrineAnnotation' => true,
         'blank_line_before_statement' => false,
         'concat_space' => ['spacing' => 'one'],
@@ -46,11 +46,12 @@ final class Php73 extends RuleSetBase
 
     protected $riskyRules = [
         '@Symfony:risky' => true,
+        '@PHP74Migration:risky' => true,
         'comment_to_phpdoc' => true,
         'declare_strict_types' => false,
         'native_constant_invocation' => false,
         'native_function_invocation' => false,
     ];
 
-    protected $targetPhpVersion = 70300;
+    protected $targetPhpVersion = 70400;
 }

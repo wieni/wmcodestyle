@@ -15,17 +15,20 @@ final class Factory
             throw new RuntimeException(\sprintf('Current PHP version "%s is less than targeted PHP version "%s".', \PHP_VERSION_ID, $ruleSet->getTargetPhpVersion()));
         }
 
+        $rules = $ruleSet->getRules();
         $config = new Config($ruleSet->getName());
 
         $config->registerCustomFixers([
             new CreateMethodOrderFixer,
         ]);
 
-        $config->setRiskyAllowed(true);
-        $config->setRules(\array_merge(
-            $ruleSet->getRules(),
-            $overrideRules
-        ));
+        if (getenv('WMCODESTYLE_RISKY')) {
+            $config->setRiskyAllowed(true);
+            $rules = array_merge($rules, $ruleSet->getRiskyRules());
+        }
+
+        $rules = array_merge($rules, $overrideRules);
+        $config->setRules($rules);
 
         return $config;
     }

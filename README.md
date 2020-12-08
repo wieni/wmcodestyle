@@ -72,6 +72,8 @@ Pick one of the rule sets:
 
 * [`Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet\Php71`](src/PhpCsFixer/Config/RuleSet/Php71.php)
 * [`Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet\Php73`](src/PhpCsFixer/Config/RuleSet/Php73.php)
+* [`Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet\Php74`](src/PhpCsFixer/Config/RuleSet/Php74.php)
+* [`Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet\Php80`](src/PhpCsFixer/Config/RuleSet/Php80.php)
 
 Create a configuration file `.php_cs.php` in the root of your project:
 
@@ -93,6 +95,9 @@ $config->setCacheFile(__DIR__ . '/.php_cs.cache');
 
 return $config;
 ```
+
+By default, risky rules are not used. To use them, pass `--allow-risky=yes` to `php-cs-fixer` or set the 
+`WMCODESTYLE_RISKY=1` environment variable.
 
 #### Git
 
