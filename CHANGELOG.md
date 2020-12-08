@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2020-12-08
+### Added
+- Add rulesets for PHP 7.4 & 8.0
+- Disable risky rules by default for php-cs-fixer
+
+### Changed
+- Increase the minimum version of phpstan & php-cs-fixer
+- Update drupal-module & drupal-site phpstan configs
+- Update php-cs-fixer configs
+
 ## [1.2.0] - 2020-05-09
 ### Added
 - Add best practices about git commit messages
