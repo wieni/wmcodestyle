@@ -2,6 +2,8 @@ parameters:
     excludes_analyse:
         - *Test.php
         - *TestBase.php
+    bootstrapFiles:
+        - %currentWorkingDirectory%/vendor/twig/twig/src/Extension/CoreExtension.php
     ignoreErrors:
         - '#Constant (WM_ENV(_.+)?|WM_FRONT) not found#'
         - '#Plugin definitions cannot be altered#'
@@ -9,7 +11,7 @@ parameters:
         -
             message: '#Implicit array creation is not allowed - variable \$(config|databases|settings) (does|might) not exist#'
             paths:
-                - %currentWorkingDirectory%/public/sites/default/settings.php
+                - %currentWorkingDirectory%/public/sites/*/*settings.php
         -
             message: '#Implicit array creation is not allowed - variable \$events does not exist#'
             paths:
@@ -19,9 +21,9 @@ parameters:
             paths:
                 - %currentWorkingDirectory%/public/modules/custom/*/src/Entity/*
         -
-            message: '#Undefined variable: \$(app_root|site_path)#'
+            message: '#(Undefined variable: )?\$(app_root|site_path)( might not be defined)?#'
             paths:
-                - %currentWorkingDirectory%/public/sites/default/settings.php
+                - %currentWorkingDirectory%/public/sites/*/*settings.php
 includes:
 	- %currentWorkingDirectory%/vendor/mglaman/phpstan-drupal/extension.neon
 	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
