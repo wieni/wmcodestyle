@@ -10,4 +10,3 @@ parameters:
 includes:
 	- %currentWorkingDirectory%/vendor/phpstan/phpstan-deprecation-rules/rules.neon
 	- %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
-	- %currentWorkingDirectory%/vendor/symplify/phpstan-extensions/config/config.neon
