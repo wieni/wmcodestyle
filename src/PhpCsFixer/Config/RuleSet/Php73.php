@@ -11,6 +11,11 @@ final class Php73 extends RuleSetBase
         '@PHP73Migration' => true,
         '@DoctrineAnnotation' => true,
         'blank_line_before_statement' => false,
+        'class_definition' => [
+            'multi_line_extends_each_single_line' => true,
+            'single_item_single_line' => true,
+            'single_line' => false,
+        ],
         'concat_space' => ['spacing' => 'one'],
         'doctrine_annotation_spaces' => [
             'after_argument_assignments' => true,
