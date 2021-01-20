@@ -11,12 +11,10 @@ use Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector;
 use Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector;
 use Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector;
 use Rector\CodingStyle\Rector\Use_\SplitGroupedUseImportsRector;
-use Rector\TypeDeclaration\Rector\Closure\AddClosureReturnTypeRector;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
-    $services->set(AddClosureReturnTypeRector::class);
     $services->set(PHPStormVarAnnotationRector::class);
     $services->set(BinarySwitchToIfElseRector::class);
     $services->set(ConsistentImplodeRector::class);
