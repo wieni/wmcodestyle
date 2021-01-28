@@ -11,7 +11,7 @@ use SplFileInfo;
 
 class CreateMethodOrderFixer extends AbstractFixer
 {
-    public function getDefinition()
+    public function getDefinition(): FixerDefinition
     {
         return new FixerDefinition(
             'Place static create methods right after the constructor.',
@@ -19,17 +19,17 @@ class CreateMethodOrderFixer extends AbstractFixer
         );
     }
 
-    public function getName()
+    public function getName(): string
     {
         return implode('/', ['Wieni', parent::getName()]);
     }
 
-    public function isCandidate(Tokens $tokens)
+    public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isAnyTokenKindsFound(Token::getClassyTokenKinds());
     }
 
-    protected function applyFix(SplFileInfo $file, Tokens $tokens)
+    protected function applyFix(SplFileInfo $file, Tokens $tokens): void
     {
         for ($i = 1, $count = $tokens->count(); $i < $count; $i++) {
             if (!$tokens[$i]->isGivenKind(T_CLASS)) {
@@ -152,24 +152,21 @@ class CreateMethodOrderFixer extends AbstractFixer
         }
 
         unset($element);
-
-        if (
-            !isset($constructIndex, $createIndex)
-            || $constructIndex + 1 === $createIndex
-        ) {
+        if (!isset($constructIndex, $createIndex)) {
+            return $elements;
+        }
+        if ($constructIndex + 1 === $createIndex) {
             return $elements;
         }
 
         $create = $elements[$createIndex];
         unset($elements[$createIndex]);
 
-        $elements = array_merge(
+        return array_merge(
             array_slice($elements, 0, $constructIndex + 1),
             [$create],
             array_slice($elements, $constructIndex + 1)
         );
-
-        return $elements;
     }
 
     protected function sortTokens(Tokens $tokens, int $startIndex, int $endIndex, array $elements): void

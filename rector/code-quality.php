@@ -33,7 +33,6 @@ use Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector;
 use Rector\CodeQuality\Rector\Identical\SimplifyConditionsRector;
 use Rector\CodeQuality\Rector\If_\CombineIfRector;
 use Rector\CodeQuality\Rector\If_\ConsecutiveNullCompareReturnsToNullCoalesceQueueRector;
-use Rector\CodeQuality\Rector\If_\ExplicitBoolCompareRector;
 use Rector\CodeQuality\Rector\If_\ShortenElseIfRector;
 use Rector\CodeQuality\Rector\If_\SimplifyIfElseToTernaryRector;
 use Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector;
@@ -42,6 +41,7 @@ use Rector\CodeQuality\Rector\Name\FixClassCaseSensitivityNameRector;
 use Rector\CodeQuality\Rector\NotEqual\CommonNotEqualRector;
 use Rector\CodeQuality\Rector\Return_\SimplifyUselessVariableRector;
 use Rector\CodeQuality\Rector\Ternary\SwitchNegatedTernaryRector;
+use Rector\Renaming\Rector\FuncCall\RenameFunctionRector;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
@@ -78,7 +78,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(SimplifyConditionsRector::class);
     $services->set(CombineIfRector::class);
     $services->set(ConsecutiveNullCompareReturnsToNullCoalesceQueueRector::class);
-    $services->set(ExplicitBoolCompareRector::class);
     $services->set(ShortenElseIfRector::class);
     $services->set(SimplifyIfElseToTernaryRector::class);
     $services->set(SimplifyIfReturnBoolRector::class);
@@ -94,7 +93,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                 'split' => 'explode',
                 'join' => 'implode',
                 'sizeof' => 'count',
-                # https://www.php.net/manual/en/aliases.php
+                // https://www.php.net/manual/en/aliases.php
                 'chop' => 'rtrim',
                 'doubleval' => 'floatval',
                 'gzputs' => 'gzwrites',
@@ -108,7 +107,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                 'key_exists' => 'array_key_exists',
                 'pos' => 'current',
                 'strchr' => 'strstr',
-                # mb
+                // mb
                 'mbstrcut' => 'mb_strcut',
                 'mbstrlen' => 'mb_strlen',
                 'mbstrpos' => 'mb_strpos',

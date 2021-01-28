@@ -19,7 +19,7 @@ final class Factory
         $config = new Config($ruleSet->getName());
 
         $config->registerCustomFixers([
-            new CreateMethodOrderFixer,
+            new CreateMethodOrderFixer(),
         ]);
 
         if (getenv('WMCODESTYLE_RISKY')) {

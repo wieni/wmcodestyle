@@ -23,7 +23,7 @@ class SyncCommand extends Command
         $this->filesystem = new Filesystem();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName(self::COMMAND_NAME)
@@ -31,7 +31,7 @@ class SyncCommand extends Command
             ->addArgument('file_name', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'The file(s) to copy');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $io = new SymfonyStyle($input, $output);
 
@@ -44,7 +44,7 @@ class SyncCommand extends Command
             $destination = implode(DIRECTORY_SEPARATOR, [$projectRoot, $fileName]);
 
             if (file_exists($destination)) {
-                if ($io->confirm("The file {$fileName} already exists at {$projectRoot}. Overwrite?")) {
+                if ($io->confirm(sprintf('The file %s already exists at %s. Overwrite?', $fileName, $projectRoot))) {
                     unlink($destination);
                 } else {
                     return;
@@ -58,7 +58,7 @@ class SyncCommand extends Command
                 return;
             }
 
-            $io->success("Successfully copied {$fileName} to {$projectRoot}.");
+            $io->success(sprintf('Successfully copied %s to %s.', $fileName, $projectRoot));
         }
     }
 
