@@ -25,11 +25,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters->set(Option::SETS, [
         SetList::DEAD_DOC_BLOCK,
-        SetList::EARLY_RETURN,
         SetList::TWIG_UNDERSCORE_TO_NAMESPACE,
     ]);
 
     $containerConfigurator->import(WieniSetList::CODE_QUALITY);
     $containerConfigurator->import(WieniSetList::CODING_STYLE);
+    $containerConfigurator->import(WieniSetList::EARLY_RETURN);
     $containerConfigurator->import(WieniSetList::TYPE_DECLARATION);
 };

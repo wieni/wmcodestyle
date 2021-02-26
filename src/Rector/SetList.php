@@ -10,5 +10,7 @@ final class SetList
 
     public const DEPENDENCY_INJECTION = __DIR__ . '/../../rector/dependency-injection.php';
 
+    public const EARLY_RETURN = __DIR__ . '/../../rector/early-return.php';
+
     public const TYPE_DECLARATION = __DIR__ . '/../../rector/type-declaration.php';
 }
