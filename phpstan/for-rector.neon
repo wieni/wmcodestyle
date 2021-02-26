@@ -1,0 +1,2 @@
+includes:
+	- %currentWorkingDirectory%/vendor/phpstan/phpstan-symfony/extension.neon
