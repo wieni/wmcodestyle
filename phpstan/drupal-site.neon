@@ -26,4 +26,6 @@ parameters:
                 - %currentWorkingDirectory%/public/sites/*/*settings.php
 includes:
 	- %currentWorkingDirectory%/vendor/mglaman/phpstan-drupal/extension.neon
+	- %currentWorkingDirectory%/vendor/phpstan/phpstan-symfony/extension.neon
+	- %currentWorkingDirectory%/vendor/phpstan/phpstan-symfony/rules.neon
 	- %currentWorkingDirectory%/vendor/wieni/wmcodestyle/phpstan/php-project.neon
