@@ -10,6 +10,7 @@ final class Php80 extends RuleSetBase
         '@Symfony' => true,
         '@PHP80Migration' => true,
         '@DoctrineAnnotation' => true,
+        'binary_operator_spaces' => ['operators' => ['|' => null]]
         'blank_line_before_statement' => false,
         'class_definition' => [
             'multi_line_extends_each_single_line' => true,
