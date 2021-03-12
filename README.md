@@ -167,7 +167,7 @@ If you like [`composer` scripts](https://getcomposer.org/doc/articles/scripts.md
  {
    "name": "foo/bar",
    "require": {
-     "php": "^7.2",
+     "php": "^8.0",
    },
    "require-dev": {
      "wieni/wmcodestyle": "^1.0"
