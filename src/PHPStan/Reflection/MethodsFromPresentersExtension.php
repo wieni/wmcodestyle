@@ -30,7 +30,7 @@ class MethodsFromPresentersExtension implements MethodsClassReflectionExtension
 
     public function getMethod(ClassReflection $classReflection, string $methodName): MethodReflection
     {
-        return $this->getPresenterModel($classReflection)->getMethod($methodName, new OutOfClassScope);
+        return $this->getPresenterModel($classReflection)->getMethod($methodName, new OutOfClassScope());
     }
 
     protected function getPresenterModel(ClassReflection $classReflection): ?ClassReflection
