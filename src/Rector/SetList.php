@@ -12,5 +12,7 @@ final class SetList
 
     public const EARLY_RETURN = __DIR__ . '/../../rector/early-return.php';
 
+    public const HOOK_EVENT_DISPATCHER = __DIR__ . '/../../rector/hook-event-dispatcher.php';
+
     public const TYPE_DECLARATION = __DIR__ . '/../../rector/type-declaration.php';
 }
