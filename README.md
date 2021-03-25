@@ -31,6 +31,7 @@ wmcodestyle
 
 ## Coding standards
 - [General](standards/GENERAL.md)
+- [Drupal modules](standards/DRUPAL_MODULES.md)
 - [Model–view–controller (and presenter)](standards/MVC.md)
 - [Git](standards/GIT.md)
 
