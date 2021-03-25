@@ -24,6 +24,23 @@ to look out for when considering using contributed code:
 - **Is it worth it?** If certain functionality can be achieved with a minimal amount of custom code, it might not be 
   worth it to add a new dependency to your project.
 
+### Issues and patches
+It's not uncommon for Drupal modules or for Drupal core to have unfixed issues. Luckily, there are a lot of active 
+Drupal users, so these issues rarely go unnoticed. 
+
+Don't immediately give up when encountering an issue with a 
+contributed module: chances are the issue is already reported in the issue queue and a WIP fix is already present in the 
+form of a patch. If you add that patch to your project using 
+[`cweagans/composer-patches`](https://github.com/cweagans/composer-patches), it will automatically be applied and you'll 
+have a temporary fix while waiting for a new release.
+
+Make sure to include the issue number and title when adding a patch to your composer.json, this will make it easier to 
+remember what exactly the patch is for.
+
+In case you don't find an existing issue and/or patch, you can try to fix the issue yourself. If you do, don't forget to
+create an issue in the issue queue and leave the patch you created. Even if it's not perfect, it might be useful for
+other people encountering the same issue.
+
 ## Contributing modules
 We have the habit of creating reusable Drupal modules for functionalities we need for more than one project. Most of the
 time, we're also making them available to everyone by sharing the code on Github. Following are some things to consider 
