@@ -172,6 +172,7 @@ declare(strict_types=1);
 
 use Rector\Core\Configuration\Option;
 use Rector\Set\ValueObject\SetList;
+use Rector\Symfony\Set\TwigSetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Wieni\wmcodestyle\Rector\SetList as WieniSetList;
 
@@ -195,10 +196,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     ]);
 
     $parameters->set(Option::SETS, [
-        SetList::DEAD_DOC_BLOCK,
+        SetList::DEAD_CODE,
         SetList::PHP_73,
         SetList::PHP_74,
-        SetList::TWIG_UNDERSCORE_TO_NAMESPACE,
+        TwigSetList::TWIG_UNDERSCORE_TO_NAMESPACE,
     ]);
 
     $containerConfigurator->import(WieniSetList::CODE_QUALITY);
