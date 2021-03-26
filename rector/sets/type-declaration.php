@@ -12,6 +12,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
     $services->set(AddClosureReturnTypeRector::class);
     $services->set(ParamTypeDeclarationRector::class);
-    $services->set(ReturnTypeDeclarationRector::class)->arg('$overrideExistingReturnTypes', false);
+    $services->set(ReturnTypeDeclarationRector::class);
     $services->set(PropertyTypeDeclarationRector::class);
 };
