@@ -86,7 +86,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         Drupal\hook_event_dispatcher\Event\Views\ViewsQueryAlterEvent::class => Drupal\views_event_dispatcher\Event\Views\ViewsQueryAlterEvent::class,
     ];
 
-    $classes = array_filter($classes, static function (string $from, string $to) {
+    $classes = array_filter($classes, static function (string $to, string $from) {
         try {
             return (new ReflectionClass($to))->getFileName();
         } catch (\ReflectionException $e) {
