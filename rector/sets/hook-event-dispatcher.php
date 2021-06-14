@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $classes = [
+        Drupal\hook_event_dispatcher\HookEventDispatcherEvents::class => Drupal\hook_event_dispatcher\HookEventDispatcherInterface::class,
         Drupal\hook_event_dispatcher\Event\Block\BaseBlockEvent::class => Symfony\Component\EventDispatcher\Event::class,
         Drupal\hook_event_dispatcher\Event\Block\BlockBuildAlterEvent::class => Drupal\core_event_dispatcher\Event\Block\BlockBuildAlterEvent::class,
         Drupal\hook_event_dispatcher\Event\Cron\CronEvent::class => Drupal\core_event_dispatcher\Event\Core\CronEvent::class,
