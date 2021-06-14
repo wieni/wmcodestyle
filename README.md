@@ -31,14 +31,8 @@ wmcodestyle
 
 ## Coding standards
 - [General](standards/GENERAL.md)
-- [Code structure](standards/CODE_STRUCTURE.md)
-- [Spaces and indentation](standards/SPACES_INDENTATION.md)
-- [Comments and docblocks](standards/COMMENTS_DOCBLOCKS.md)
-- [Models](standards/MODELS.md)
-- [Controllers](standards/CONTROLLERS.md)
-- [Event subscribers](standards/EVENT_SUBSCRIBERS.md)
-- [Drush commands](standards/DRUSH_COMMANDS.md)
-- [Publishing modules](standards/PUBLISHING_MODULES.md)
+- [Drupal modules](standards/DRUPAL_MODULES.md)
+- [Model–view–controller (and presenter)](standards/MVC.md)
 - [Git](standards/GIT.md)
 
 ## Tooling
