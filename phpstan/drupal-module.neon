@@ -16,7 +16,7 @@ parameters:
         - module
     paths:
         - %currentWorkingDirectory%/src
-    excludes_analyse:
+    excludePaths:
         - *Test.php
         - *TestBase.php
     ignoreErrors:
