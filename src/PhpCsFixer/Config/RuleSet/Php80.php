@@ -25,7 +25,6 @@ final class Php80 extends RuleSetBase
         'explicit_indirect_variable' => true,
         'global_namespace_import' => false,
         'increment_style' => ['style' => 'post'],
-        'list_syntax' => ['syntax' => 'short'],
         'no_superfluous_phpdoc_tags' => [
             'allow_mixed' => true,
             'remove_inheritdoc' => true,

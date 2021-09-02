@@ -4,6 +4,7 @@ namespace Wieni\wmcodestyle\PhpCsFixer\Fixer;
 
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
+use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\CT;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
@@ -11,7 +12,7 @@ use SplFileInfo;
 
 class CreateMethodOrderFixer extends AbstractFixer
 {
-    public function getDefinition(): FixerDefinition
+    public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
             'Place static create methods right after the constructor.',
@@ -114,8 +115,6 @@ class CreateMethodOrderFixer extends AbstractFixer
             $elements[] = $element;
             $startIndex = $element['end'] + 1;
         }
-
-        return $elements;
     }
 
     protected function findElementEnd(Tokens $tokens, int $index): int
