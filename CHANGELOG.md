@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.7.8]
 ### Changed
+- Allow Symfony 5 dependencies
 - **[PHP-CS-Fixer]** Update to v3
 - **[Rector]** Include more file extensions in configs
 - **[Rector]** Include PHP 8 & PHP 8.1 setlists in configs
