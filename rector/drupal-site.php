@@ -13,13 +13,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters->set(Option::AUTO_IMPORT_NAMES, true);
     $parameters->set(Option::IMPORT_SHORT_CLASSES, false);
-
-    $parameters->set(Option::FILE_EXTENSIONS, [
-        'php',
-        'inc',
-        'install',
-        'module',
-    ]);
+    $parameters->set(Option::FILE_EXTENSIONS, ['php', 'module', 'theme', 'install', 'profile', 'inc', 'engine']);
 
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::PHP_73);

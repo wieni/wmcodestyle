@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.7.8] - 2021-09-02
 ### Changed
 - Update PHP-CS-Fixer to v3
+- Include more file extensions in drupal-site Rector config
 
 ## [1.7.7] - 2021-07-30
 ### Added
