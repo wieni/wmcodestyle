@@ -2,22 +2,19 @@
 
 declare(strict_types=1);
 
-use Rector\CodingStyle\Rector\Assign\PHPStormVarAnnotationRector;
-use Rector\CodingStyle\Rector\ClassConst\SplitGroupedConstantsAndPropertiesRector;
-use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
-use Rector\CodingStyle\Rector\FuncCall\ConsistentImplodeRector;
-use Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector;
-use Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector;
-use Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Rector\CodingStyle\Rector\Assign\SplitDoubleAssignRector;
+use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
+use Rector\CodingStyle\Rector\Plus\UseIncrementAssignRector;
+use Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector;
+use Rector\Set\ValueObject\SetList;
+use RectorPrefix20210827\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
+    $containerConfigurator->import(SetList::CODING_STYLE);
+
     $services = $containerConfigurator->services();
-    $services->set(PHPStormVarAnnotationRector::class);
-    $services->set(BinarySwitchToIfElseRector::class);
-    $services->set(ConsistentImplodeRector::class);
-    $services->set(RemoveUnusedAliasRector::class);
-    $services->set(SymplifyQuoteEscapeRector::class);
-    $services->set(SplitGroupedConstantsAndPropertiesRector::class);
-    $services->set(EncapsedStringsToSprintfRector::class);
+    $services->remove(UseIncrementAssignRector::class);
+    $services->remove(SplitDoubleAssignRector::class);
+    $services->remove(VarConstantCommentRector::class);
+    $services->remove(PostIncDecToPreIncDecRector::class);
 };

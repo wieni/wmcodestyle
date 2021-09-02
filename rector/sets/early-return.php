@@ -2,16 +2,19 @@
 
 declare (strict_types=1);
 
-use Rector\EarlyReturn\Rector\Foreach_\ChangeNestedForeachIfsToEarlyContinueRector;
-use Rector\EarlyReturn\Rector\If_\ChangeIfElseValueAssignToEarlyReturnRector;
-use Rector\EarlyReturn\Rector\If_\ChangeNestedIfsToEarlyReturnRector;
-use Rector\EarlyReturn\Rector\If_\RemoveAlwaysElseRector;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Rector\EarlyReturn\Rector\If_\ChangeOrIfContinueToMultiContinueRector;
+use Rector\EarlyReturn\Rector\If_\ChangeOrIfReturnToEarlyReturnRector;
+use Rector\EarlyReturn\Rector\Return_\ReturnBinaryAndToEarlyReturnRector;
+use Rector\EarlyReturn\Rector\Return_\ReturnBinaryOrToEarlyReturnRector;
+use Rector\Set\ValueObject\SetList;
+use RectorPrefix20210827\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator) : void {
+    $containerConfigurator->import(SetList::EARLY_RETURN);
+
     $services = $containerConfigurator->services();
-    $services->set(ChangeNestedForeachIfsToEarlyContinueRector::class);
-    $services->set(ChangeIfElseValueAssignToEarlyReturnRector::class);
-    $services->set(ChangeNestedIfsToEarlyReturnRector::class);
-    $services->set(RemoveAlwaysElseRector::class);
+    $services->remove(ReturnBinaryAndToEarlyReturnRector::class);
+    $services->remove(ChangeOrIfReturnToEarlyReturnRector::class);
+    $services->remove(ChangeOrIfContinueToMultiContinueRector::class);
+    $services->remove(ReturnBinaryOrToEarlyReturnRector::class);
 };
