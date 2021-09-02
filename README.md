@@ -240,7 +240,24 @@ Dumping the container is not possible out-of-the-box when using Drupal, but our 
 > before you write tests for the code. It moves PHP closer to compiled languages in the sense that the correctness of 
 > each line of the code can be checked before you run the actual line.
 
-_TODO_
+#### Drupal
+For better integration with Drupal, consider adding [`mglaman/phpstan-drupal`](https://github.com/mglaman/phpstan-drupal)
+and [`phpstan/phpstan-symfony`](https://github.com/phpstan/phpstan-symfony) to your project. These extensions are 
+required when using the `drupal-module` or `drupal-site` configs.
+
+You can use the [Container Dumper module](https://www.drupal.org/project/container_dumper) to dump the Symfony container
+to an XML file. The Symfony extension can then use this file to get better insights into your project. Add the following
+to your PHPStan config:
+
+```yaml
+parameters:
+    symfony:
+        container_xml_path: %currentWorkingDirectory%/.cache/drupal_container.xml
+```
+#### Symfony
+For better integration with Symfony, consider adding 
+[`phpstan/phpstan-symfony`](https://github.com/phpstan/phpstan-symfony) and
+[`phpstan/phpstan-doctrine`](https://github.com/phpstan/phpstan-doctrine) to your project.
 
 ### [composer-normalize](https://github.com/ergebnis/composer-normalize)
 > Provides a composer plugin for normalizing composer.json.
