@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update PHP-CS-Fixer to v3
 - Include more file extensions in Rector configs
-- Include PHP 8 setlist in Rector configs
+- Include PHP 8 & PHP 8.1 setlists in Rector configs
 - Change Rector rulesets to remove rules of existing rulesets instead of redefining them
 - Lock Rector to a specific version. This is necessary because we're using classes from the prefixed namespace, which 
   changes every release. Additionally, it's a good way to force ourselves to keep an eye on the Rector changelog when a 
