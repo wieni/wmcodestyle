@@ -15,4 +15,6 @@ final class SetList
     public const HOOK_EVENT_DISPATCHER = __DIR__ . '/../../rector/sets/hook-event-dispatcher.php';
 
     public const TYPE_DECLARATION = __DIR__ . '/../../rector/sets/type-declaration.php';
+
+    public const PHP_81 = __DIR__ . '/../../rector/sets/php81.php';
 }

@@ -19,7 +19,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::PHP_73);
     $containerConfigurator->import(SetList::PHP_74);
     $containerConfigurator->import(SetList::PHP_80);
-    $containerConfigurator->import(SetList::PHP_81);
+    $containerConfigurator->import(WieniSetList::PHP_81);
     $containerConfigurator->import(TwigSetList::TWIG_UNDERSCORE_TO_NAMESPACE);
     $containerConfigurator->import(WieniSetList::CODE_QUALITY);
     $containerConfigurator->import(WieniSetList::CODING_STYLE);
