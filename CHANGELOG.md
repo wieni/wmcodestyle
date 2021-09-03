@@ -11,9 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[Rector]** Include more file extensions in configs
 - **[Rector]** Include PHP 8 & PHP 8.1 setlists in configs
 - **[Rector]** Change rulesets to remove rules of existing rulesets instead of completely redefining them
-- **[Rector]** Lock to a specific version. This is necessary because we're using classes from the prefixed namespace, which 
-  changes every release. Additionally, it's a good way to force ourselves to keep an eye on the Rector changelog when a 
-  new version comes out.
+- **[Rector]** Lock to a specific version. We consider this a good way to force ourselves to keep an eye on the Rector
+  changelog when a new version comes out, and keep our rulesets up to date.
  
 ### Removed
 - Remove phpstan-drupal and phpstan-symfony dependencies and add recommendations to README instead.
