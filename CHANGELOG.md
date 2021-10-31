@@ -4,18 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.7.8]
+## [1.8.0] - 2021-10-31
+Check [UPGRADING.md](UPGRADING.md) for instructions on breaking changes.
+
 ### Changed
 - Allow Symfony 5 dependencies
 - **[PHP-CS-Fixer]** Update to v3
 - **[Rector]** Include more file extensions in configs
 - **[Rector]** Include PHP 8 & PHP 8.1 setlists in configs
 - **[Rector]** Change rulesets to remove rules of existing rulesets instead of completely redefining them
-- **[Rector]** Lock to a specific version. We consider this a good way to force ourselves to keep an eye on the Rector
-  changelog when a new version comes out, and keep our rulesets up to date.
+- **[Rector]** Add a minimum patch version. This makes it easier to keep track of what version our rule set overrides 
+ are based on
  
 ### Removed
-- Remove phpstan-drupal and phpstan-symfony dependencies and add recommendations to README instead.
+- Remove `mglaman/phpstan-drupal` and `phpstan/phpstan-symfony` dependencies and add recommendations to README instead.
 
 ## [1.7.7] - 2021-07-30
 ### Added
