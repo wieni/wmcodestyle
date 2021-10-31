@@ -15,7 +15,7 @@
         "phpstan/phpstan": "^0.12.65",
         "phpstan/phpstan-deprecation-rules": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
-        "rector/rector": "^0.11.52",
+        "rector/rector": "^0.11.60",
         "symfony/console": "^2.8 || ^3 || ^4 || ^5",
         "symfony/filesystem": "^3 || ^4 || ^5"
     },
