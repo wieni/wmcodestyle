@@ -4,8 +4,10 @@ namespace Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet;
 
 final class Php73 extends RuleSetBase
 {
+    /** @var string */
     protected $name = 'Wieni (PHP 7.3)';
 
+    /** @var array<string, array|bool> */
     protected $rules = [
         '@Symfony' => true,
         '@PHP73Migration' => true,
@@ -48,6 +50,7 @@ final class Php73 extends RuleSetBase
         'Wieni/create_method_order' => true,
     ];
 
+    /** @var array<string, array|bool> */
     protected $riskyRules = [
         '@Symfony:risky' => true,
         'comment_to_phpdoc' => true,
@@ -56,5 +59,6 @@ final class Php73 extends RuleSetBase
         'native_function_invocation' => false,
     ];
 
+    /** @var int */
     protected $targetPhpVersion = 70300;
 }
