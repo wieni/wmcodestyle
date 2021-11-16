@@ -9,9 +9,9 @@ abstract class RuleSetBase implements RuleSetInterface
 {
     /** @var string */
     protected $name;
-    /** @var array */
+    /** @var array<string, array|bool> */
     protected $rules = [];
-    /** @var array */
+    /** @var array<string, array|bool> */
     protected $riskyRules = [];
     /** @var int */
     protected $targetPhpVersion;

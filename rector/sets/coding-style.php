@@ -10,6 +10,7 @@ use Rector\CodingStyle\Rector\ClassMethod\MakeInheritedMethodVisibilitySameAsPar
 use Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector;
 use Rector\CodingStyle\Rector\FuncCall\ConsistentPregDelimiterRector;
 use Rector\CodingStyle\Rector\If_\NullableCompareToNullRector;
+use Rector\CodingStyle\Rector\MethodCall\UseMessageVariableForSprintfInSymfonyStyleRector;
 use Rector\CodingStyle\Rector\Plus\UseIncrementAssignRector;
 use Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector;
 use Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector;
@@ -30,6 +31,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->remove(ConsistentPregDelimiterRector::class);
     $services->remove(AddArrayDefaultToArrayPropertyRector::class);
     $services->remove(MakeInheritedMethodVisibilitySameAsParentRector::class);
+    $services->remove(UseMessageVariableForSprintfInSymfonyStyleRector::class);
     // We don't want to add spaces between class properties. Can be re-enabled if this becomes configurable.
     $services->remove(NewlineAfterStatementRector::class);
 };

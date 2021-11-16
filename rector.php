@@ -13,7 +13,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters->set(Option::AUTO_IMPORT_NAMES, true);
     $parameters->set(Option::IMPORT_SHORT_CLASSES, false);
-    $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, __DIR__ . '/phpstan/for-rector.neon');
 
     $parameters->set(Option::PATHS, [
         __DIR__ . '/*.php',
@@ -21,15 +20,17 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/src',
     ]);
 
+    $parameters->set(Option::SKIP, [
+        'rector/sets/dependency-injection.php',
+        'rector/sets/hook-event-dispatcher.php',
+    ]);
+
     $parameters->set(Option::AUTOLOAD_PATHS, [
         __DIR__ . '/src',
     ]);
 
-    $parameters->set(Option::SETS, [
-        SetList::DEAD_CODE,
-        TwigSetList::TWIG_UNDERSCORE_TO_NAMESPACE,
-    ]);
-
+    $containerConfigurator->import(SetList::DEAD_CODE);
+    $containerConfigurator->import(TwigSetList::TWIG_UNDERSCORE_TO_NAMESPACE);
     $containerConfigurator->import(WieniSetList::CODE_QUALITY);
     $containerConfigurator->import(WieniSetList::CODING_STYLE);
     $containerConfigurator->import(WieniSetList::EARLY_RETURN);
