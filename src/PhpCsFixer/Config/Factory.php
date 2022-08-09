@@ -5,6 +5,7 @@ namespace Wieni\wmcodestyle\PhpCsFixer\Config;
 use PhpCsFixer\Config;
 use RuntimeException;
 use Wieni\wmcodestyle\PhpCsFixer\Config\RuleSet\RuleSetInterface;
+use Wieni\wmcodestyle\PhpCsFixer\Fixer\BlankLineAroundClassBodyFixer;
 use Wieni\wmcodestyle\PhpCsFixer\Fixer\CreateMethodOrderFixer;
 
 final class Factory
@@ -20,6 +21,7 @@ final class Factory
 
         $config->registerCustomFixers([
             new CreateMethodOrderFixer(),
+            new BlankLineAroundClassBodyFixer(),
         ]);
 
         if (getenv('WMCODESTYLE_RISKY')) {
