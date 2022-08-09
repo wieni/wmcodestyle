@@ -49,6 +49,11 @@ final class Php81 extends RuleSetBase
         'single_line_throw' => false,
         'yoda_style' => false,
         'Wieni/create_method_order' => true,
+        // Copied from https://github.com/elyby/php-code-style
+        // Leave the copyright notice intact!
+        'Wieni/blank_line_around_class_body' => [
+            'apply_to_anonymous_classes' => false,
+        ],
     ];
 
     /** @var array<string, array|bool> */
