@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] - 2022-10-10
+### Added
+- `Php81` RuleSet.
+  - With the `BlankLineAroundClassBodyFixer`. See [PHP-CS-Fixer/#3653](https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/3653)
+
+### Changed
+- **[Symfony]** Support version `^6` of Symfony
+- **[Rector]** Update Rector to 0.13
+
 ## [1.9.0] - 2021-11-16
 ### Changed
 - **[PHPStan]** Update PHPStan and related packages to 1.0
@@ -18,9 +27,9 @@ Check [UPGRADING.md](UPGRADING.md) for instructions on breaking changes.
 - **[Rector]** Include more file extensions in configs
 - **[Rector]** Include PHP 8 & PHP 8.1 setlists in configs
 - **[Rector]** Change rulesets to remove rules of existing rulesets instead of completely redefining them
-- **[Rector]** Add a minimum patch version. This makes it easier to keep track of what version our rule set overrides 
+- **[Rector]** Add a minimum patch version. This makes it easier to keep track of what version our rule set overrides
  are based on
- 
+
 ### Removed
 - Remove `mglaman/phpstan-drupal` and `phpstan/phpstan-symfony` dependencies and add recommendations to README instead.
 
@@ -105,7 +114,7 @@ Check [UPGRADING.md](UPGRADING.md) for instructions on breaking changes.
 ### Changed
 - Change repository description
 - Update README
-- Update regex of the _Implicit array creation is not allowed_ 
+- Update regex of the _Implicit array creation is not allowed_
  PHPStan rule.
 
 ## [1.1.0] - 2020-03-26
