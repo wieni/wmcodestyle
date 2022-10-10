@@ -67,5 +67,5 @@ final class Php81 extends RuleSetBase
     ];
 
     /** @var int */
-    protected $targetPhpVersion = 80000;
+    protected $targetPhpVersion = 80100;
 }
