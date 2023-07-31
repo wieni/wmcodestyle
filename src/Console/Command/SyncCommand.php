@@ -31,7 +31,8 @@ class SyncCommand extends Command
             ->addArgument('file_name', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'The file(s) to copy');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): void
+    /** @return int */
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
 
@@ -47,7 +48,7 @@ class SyncCommand extends Command
                 if ($io->confirm(sprintf('The file %s already exists at %s. Overwrite?', $fileName, $projectRoot))) {
                     unlink($destination);
                 } else {
-                    return;
+                    return 0;
                 }
             }
 
@@ -55,11 +56,13 @@ class SyncCommand extends Command
                 $this->filesystem->copy($source, $destination, true);
             } catch (IOException $e) {
                 $io->error($e->getMessage());
-                return;
+                return 1;
             }
 
             $io->success(sprintf('Successfully copied %s to %s.', $fileName, $projectRoot));
         }
+
+        return 0;
     }
 
     protected function getComposerRoot(): ?string
